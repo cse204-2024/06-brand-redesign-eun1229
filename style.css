@@ -1,5 +1,7 @@
 /* color palette: 
-#db1020; #FFBC0E; #edf6f8; */
+#db1020; #FFBC0E; #edf6f8; 
+intentionally kept the background white instead of light grey
+chose #2a2a2a as my "black" and rgb(243, 243, 243) as my "white"*/
 
 body {
   margin: 0 0;
@@ -29,9 +31,19 @@ h3 {
   font-size: max(2.5vmin, 15px);
 }
 
-p {
+p,
+td,
+li {
   line-height: 1.75em;
   font-size: max(2vmin, 10px);
+}
+
+li {
+  padding: 0.75vh
+}
+
+li > strong {
+  font-size: max(2.2vmin, 12.5px);
 }
 
 nav {
@@ -47,14 +59,28 @@ nav {
   justify-content: space-evenly;
 }
 
+a {
+  color: #db1020;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #db1020;
+  text-decoration: none;
+}
+
 footer {
-  background-color: black;
+  background-color: rgb(243, 243, 243);
   grid-area: footer;
+  margin-top: 7.5vh;
+  box-sizing: border-box;
+  padding: 40px 50px;
+  display: flex;
 }
 
 button {
   background-color: #db1020;
-  color: rgb(235, 235, 235);
+  color: rgb(243, 243, 243);
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-variation-settings:
@@ -65,12 +91,18 @@ button {
   font-size: 2.5vmin;
 }
 
+ul {
+  list-style-type: none; 
+  padding: 0; 
+  margin: 1vh 5vw;
+}
+
 /* CLASSES */
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 12.5vh 70vh 12.5vh 70vh 50vh 50vh 12.5vh;
+  grid-template-rows: 12.5vh 70vh 12.5vh 70vh 50vh 50vh 50vh;
   overflow: auto;
   grid-template-areas: 
   "nav nav nav nav nav nav"
@@ -205,7 +237,7 @@ button {
 @media (max-width: 375px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 12.5vh 75vh 12.5vh 60vh 60vh 60vh 40vh 40vh 40vh 40vh 12.5vh;
+    grid-template-rows: 12.5vh 75vh 12.5vh 60vh 60vh 60vh 40vh 40vh 40vh 40vh 60vh;
     grid-template-areas: 
     "nav"
     "section-1"
@@ -242,6 +274,9 @@ button {
   }
   #promo-1 > div > p {
     font-size: max(2.75vmin, 10px);
+  }
+  footer {
+    overflow-y: scroll;
   }
 }
 
