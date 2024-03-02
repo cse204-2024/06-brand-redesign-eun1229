@@ -1,1 +1,110 @@
+body {
+  margin: 0 0;
+  padding: 0 0;
+  height: 100%;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 12.5vh 75vh 12.5vh 50vh 50vh 50vh 12.5vh;
+  /* height: 100vh; */
+  overflow: auto;
+  grid-template-areas: 
+  "nav nav nav nav"
+  "section-1 section-1 section-1 section-1"
+  "menu-header menu-header menu-header menu-header"
+  "menu-1 menu-2 menu-3 menu-4"
+  "section-2-picture section-2-picture section-2 section-2"
+  "section-3 section-3 section-3-picture section-3-picture"
+  "footer footer footer footer";
+  grid-gap: 0.2rem;
+}
+
+nav {
+  background-color: red;
+  grid-area: nav;
+  position: fixed;
+  height: 12.5vh;
+  width: 100vw;
+}
+
+footer {
+  background-color: black;
+  grid-area: footer;
+}
+
+/* IDS  */
+
+#section-1 {
+  background-color: rgba(232, 28, 255, 0.502);
+  grid-area: section-1;
+}
+
+#menu-header {
+  background-color: rgba(28, 255, 36, 0.502);
+  grid-area: menu-header;
+}
+
+#menu-1 {
+  background-color: rgba(28, 96, 255, 0.502);
+  grid-area: menu-1;
+}
+
+#menu-2 {
+  background-color: rgba(255, 107, 28, 0.502);
+  grid-area: menu-2;
+}
+
+#menu-3 {
+  background-color: rgba(255, 240, 28, 0.502);
+  grid-area: menu-3;
+}
+
+#menu-4 {
+  background-color: rgba(183, 28, 255, 0.502);
+  grid-area: menu-4;
+}
+
+#section-2 {
+  background-color: rgba(28, 255, 183, 0.502);
+  grid-area: section-2;
+}
+
+#section-2-picture {
+  background-color: rgba(47, 28, 255, 0.502);
+  grid-area: section-2-picture;
+}
+
+#section-3 {
+  background-color: chocolate;
+  grid-area: section-3;
+}
+
+#section-3-picture {
+  background-color: darkkhaki;
+  grid-area: section-3-picture;
+}
+
+/* END IDS */
+
+@media (max-width: 375px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 12.5vh 75vh 12.5vh 40vh 40vh 40vh 40vh 40vh 20vh 40vh 20vh 12.5vh;
+    grid-template-areas: 
+    "nav"
+    "section-1"
+    "menu-header"
+    "menu-1"
+    "menu-2"
+    "menu-3" 
+    "menu-4"
+    "section-2-picture"
+    "section-2"
+    "section-3-picture"
+    "section-3"
+    "footer";
+  }
+}
 
