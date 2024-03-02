@@ -1,21 +1,37 @@
+/* color palette: 
+#db1020; #FFBC0E; #edf6f8; */
+
 body {
   margin: 0 0;
   padding: 0 0;
   height: 100%;
-  font-variation-settings: "wdth" 90;
+  /* font-variation-settings: "wdth" 90; */
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #2a2a2a;
+}
+
+h1,
+h2,
+h3 {
   font-family: "Open Sans", sans-serif;
 }
 
 h1 {
-  color: black;
   font-family: "Open Sans", sans-serif;
   font-size: max(4vmin, 20px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/max */
 }
 
 h3 {
-  font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-size: 2.5vmin;
+  font-size: max(2.5vmin, 15px);
+}
+
+p {
+  line-height: 1.75em;
+  font-size: max(2vmin, 10px);
 }
 
 nav {
@@ -38,7 +54,7 @@ footer {
 
 button {
   background-color: #db1020;
-  color: white;
+  color: rgb(235, 235, 235);
   font-family: "Open Sans", sans-serif;
   font-weight: 500;
   font-variation-settings:
@@ -53,23 +69,23 @@ button {
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 12.5vh 75vh 12.5vh 50vh 50vh 50vh 12.5vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 12.5vh 70vh 12.5vh 70vh 50vh 50vh 12.5vh;
   overflow: auto;
   grid-template-areas: 
-  "nav nav nav nav"
-  "section-1 section-1 section-1 section-1"
-  "menu-header menu-header menu-header menu-header"
-  "menu-1 menu-2 menu-3 menu-4"
-  "section-2-picture section-2-picture section-2 section-2"
-  "section-3 section-3 section-3-picture section-3-picture"
-  "footer footer footer footer";
+  "nav nav nav nav nav nav"
+  "section-1 section-1 section-1 section-1 section-1 section-1"
+  "menu-header menu-header menu-header menu-header menu-header menu-header"
+  "menu-1 menu-1 menu-2 menu-2 menu-3 menu-3"
+  "section-2-picture section-2-picture section-2-picture section-2 section-2 section-2"
+  "section-3 section-3 section-3 section-3-picture section-3-picture section-3-picture"
+  "footer footer footer footer footer footer";
   grid-gap: 0.2rem;
 }
 
 .order-buttons {
   background-color: #FFBC0E;
-  color: black;
+  color: #2a2a2a;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   border: none;
@@ -83,6 +99,21 @@ button {
   font-size: max(1.75vmin, 10px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/max */
 }
 
+.menu-item {
+  background-color: #edf6f8;
+  box-sizing: border-box;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: max(1.75vmin, 10px);
+}
+
+.menu-item > h3 {
+  margin-bottom: 0;
+}
 /* END CLASSES */
 
 /* IDS  */
@@ -104,53 +135,69 @@ button {
   font-size: 2vmin;
 }
 
-#promo-1 > div > p {
+/* #promo-1 > div > p {
   font-size: max(2vmin, 10px);
-}
+} */
 
 #menu-header {
-  background-color: rgba(28, 255, 36, 0.502);
   grid-area: menu-header;
+  text-align: center;
+  height: 100%;
+  text-align: 100%;
+}
+
+#menu-header > h1{
+  color:#db1020
 }
 
 #menu-1 {
-  background-color: rgba(28, 96, 255, 0.502);
   grid-area: menu-1;
 }
 
 #menu-2 {
-  background-color: rgba(255, 107, 28, 0.502);
   grid-area: menu-2;
 }
 
 #menu-3 {
-  background-color: rgba(255, 240, 28, 0.502);
   grid-area: menu-3;
 }
 
 #menu-4 {
-  background-color: rgba(183, 28, 255, 0.502);
   grid-area: menu-4;
 }
 
 #section-2 {
-  background-color: rgba(28, 255, 183, 0.502);
   grid-area: section-2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0px 4vw;
 }
 
 #section-2-picture {
-  background-color: rgba(47, 28, 255, 0.502);
+  /* background-color: rgba(47, 28, 255, 0.502); */
   grid-area: section-2-picture;
+  box-sizing: border-box;
+  background-image: url('images/menu-photo.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0px 4vw;
 }
 
 #section-3 {
-  background-color: chocolate;
   grid-area: section-3;
+  margin: 0px 4vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #section-3-picture {
-  background-color: darkkhaki;
+  background-image: url('images/quality.jpeg');
+  background-repeat: no-repeat;
+  background-size: contain;
   grid-area: section-3-picture;
+  margin: 0px 4vw;
 }
 
 /* END IDS */
@@ -158,7 +205,7 @@ button {
 @media (max-width: 375px) {
   .grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: 12.5vh 75vh 12.5vh 40vh 40vh 40vh 40vh 40vh 20vh 40vh 20vh 12.5vh;
+    grid-template-rows: 12.5vh 75vh 12.5vh 60vh 60vh 60vh 40vh 40vh 40vh 40vh 12.5vh;
     grid-template-areas: 
     "nav"
     "section-1"
@@ -166,7 +213,6 @@ button {
     "menu-1"
     "menu-2"
     "menu-3" 
-    "menu-4"
     "section-2-picture"
     "section-2"
     "section-3-picture"
@@ -190,6 +236,9 @@ button {
   #section-1 {
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 12.5vh;
+    box-sizing: border-box;
+    margin-bottom: 5vh;
   }
   #promo-1 > div > p {
     font-size: max(2.75vmin, 10px);
