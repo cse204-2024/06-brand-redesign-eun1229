@@ -2,13 +2,59 @@ body {
   margin: 0 0;
   padding: 0 0;
   height: 100%;
+  font-variation-settings: "wdth" 90;
+  font-family: "Open Sans", sans-serif;
 }
+
+h1 {
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-size: max(4vmin, 20px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/max */
+}
+
+h3 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-size: 2.5vmin;
+}
+
+nav {
+  background-color: white;
+  grid-area: nav;
+  position: fixed;
+  height: 12.5vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  color: #db1020;
+  justify-content: space-evenly;
+}
+
+footer {
+  background-color: black;
+  grid-area: footer;
+}
+
+button {
+  background-color: #db1020;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 500;
+  font-variation-settings:
+  "wdth" 90;
+  border: none;
+  border-radius: 20px;
+  padding: 12.5px 20px;
+  font-size: 2.5vmin;
+}
+
+/* CLASSES */
 
 .grid-container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 12.5vh 75vh 12.5vh 50vh 50vh 50vh 12.5vh;
-  /* height: 100vh; */
   overflow: auto;
   grid-template-areas: 
   "nav nav nav nav"
@@ -21,24 +67,45 @@ body {
   grid-gap: 0.2rem;
 }
 
-nav {
-  background-color: red;
-  grid-area: nav;
-  position: fixed;
-  height: 12.5vh;
-  width: 100vw;
+.order-buttons {
+  background-color: #FFBC0E;
+  color: black;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  border: none;
+  border-radius: 15px;
+  padding: 12.5px 20px;
+  font-size: 1.9vmin;
+  width: 175px;
+  max-width: 100%;
+  margin-right: 5%;
+  margin-top: 5%;
+  font-size: max(1.75vmin, 10px); /* https://developer.mozilla.org/en-US/docs/Web/CSS/max */
 }
 
-footer {
-  background-color: black;
-  grid-area: footer;
-}
+/* END CLASSES */
 
 /* IDS  */
 
+#hamburger-menu {
+  display: none;
+}
+
 #section-1 {
-  background-color: rgba(232, 28, 255, 0.502);
+  background-color: white;
   grid-area: section-1;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#promo-1 {
+  width: 50%;
+  font-size: 2vmin;
+}
+
+#promo-1 > div > p {
+  font-size: max(2vmin, 10px);
 }
 
 #menu-header {
@@ -105,6 +172,27 @@ footer {
     "section-3-picture"
     "section-3"
     "footer";
+  }
+  nav {
+    padding: 0 0;
+  }
+  nav > h3 {
+    display: none;
+  }
+  #hamburger-menu {
+    display: block;
+    position: absolute;
+    left: 20px;
+  }
+  #header-order {
+    display: none;
+  }
+  #section-1 {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #promo-1 > div > p {
+    font-size: max(2.75vmin, 10px);
   }
 }
 

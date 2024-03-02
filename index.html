@@ -5,14 +5,34 @@
     <link href="style.css" type="text/css" rel="stylesheet">
     <meta name="description" content="McDonald's Website Rebranded">
     <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="grid-container">
       <nav>
-        navbar
+        <h2 id="hamburger-menu">&#9776;</h2> <!-- https://www.w3schools.com/charsets/ref_utf_symbols.asp -->
+        <img src="images/mcdonalds-logo.png" alt="McDonald's logo" height="60%" width="auto">
+        <h3>Menu</h3>
+        <h3>Locations</h3>
+        <h3>About</h3>
+        <h3>Careers</h3>
+        <button type="submit" id="header-order">Order Now</button>
       </nav>
       <section id="section-1">
-        first section, promotion
+        <div id="promo-1">
+          <div>
+            <h1><strong>Free Big Mac. One for the Price of None</strong></h1>
+            <p>With $1 minimum purchase, score a free Big Mac after downloading the McD's app and joining MyMcDonald's Rewards.*
+              Plus, with MyMcDonald's Rewards, you'll earn points to redeem for free food on every eligible order. Another Big Mac, maybe?</p>
+          </div>
+          <div>
+            <button type="submit" class="order-buttons">Order Pickup</button>
+            <button type="submit" class="order-buttons">Order Delivery</button>
+          </div>
+        </div>
+        <img src="images/bigmac.png" alt="BigMac" height="auto" width="25%">
       </section>
       <section id="menu-header">
         menu header
